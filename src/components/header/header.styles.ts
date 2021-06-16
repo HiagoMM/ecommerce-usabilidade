@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -6,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem 4rem;
+  background: white;
   #logo {
     padding-right: 4rem;
     width: 1rem;
@@ -50,6 +50,7 @@ export const CategoriesContainer = styled.div`
   height: 2.7rem;
   margin: 0.7rem 4rem;
   display: flex;
+  background: white;
   justify-content: space-between;
   button {
     height: 100%;

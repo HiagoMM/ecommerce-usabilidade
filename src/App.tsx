@@ -4,6 +4,7 @@ import { ThemeProvider as MatThemeProvider } from "@material-ui/core/styles";
 import { ThemeProvider } from "styled-components";
 import { matTheme, theme, GlobalStyle } from "./configs/themeConfig";
 import Home from "./pages/home/home";
+import Carrinho from "./pages/carrinho/carrinho";
 
 export default function App() {
   return (
@@ -17,6 +18,9 @@ export default function App() {
             </Route>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/carrinho">
+              <Carrinho/>
             </Route>
           </Switch>
         </Router>
