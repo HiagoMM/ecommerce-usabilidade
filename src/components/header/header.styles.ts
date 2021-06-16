@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -37,7 +36,7 @@ export const Container = styled.div`
   .icons {
     flex: 1.5;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     font-size: 1;
     height: 3rem;
     span {
@@ -51,12 +50,19 @@ export const CategoriesContainer = styled.div`
   margin: 0.7rem 4rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
   button {
     height: 100%;
-    margin: 0 1rem;
+    margin: 0 0.2rem;
+    font-size: 0.6rem;
   }
   #all-cat {
     margin: 0;
     margin-right: 3rem;
+  }
+  .menu-itens {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
   }
 `;

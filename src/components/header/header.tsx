@@ -41,7 +41,7 @@ const Header: React.FC = () => {
         </div>
       </Container>
       <CategoriesContainer>
-        <div>
+        <div className="menu-itens">
           <Button
             variant="contained"
             color="primary"
