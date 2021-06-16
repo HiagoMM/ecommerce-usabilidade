@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" height="100%" width="100%" viewBox="0 0 300 300">
+  <g id="svg-container" transform="matrix(5.77,0,0,5.77,-253.31583860397336,77.71785061955453)">
+    <g id="headline" transform="matrix(1,0,0,1,0,0)">
+      <text data-font-id="1666" font-family="palmer_lake_print" id="headline_0" transform="matrix(1,0,0,1,47.172194908405174,0)" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">
+        <tspan dy="20.8" x="0" fill="#000000" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;,&quot;newLined&quot;:true}">MEUMERCADO</tspan>
+      </text>
+    </g>
+    <g id="symbols" transform="matrix(2.428571346166868,0,0,2.428571346166868,58.66209201096686,23.056828558400163)">
+      <text data-font-id="1215" font-family="tradesupply__textured" id="symbols_0" transform="matrix(0.36532054008333964,0,0,0.36532054008333964,2.935392502114554,-4.04608155696871)" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">
+        <tspan id="symbols_0_word_0" fill="#648fe8" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">M</tspan>
+      </text>
+    </g>
+  </g>
+  <defs>
+    <style>@font-face {font-family: palmer_lake_print;src: url(https://pismo.tailorbrands.com/v2/px_fonts/palmer_lake_print)}</style>
+    <style>@font-face {font-family: tradesupply__textured;src: url(https://pismo.tailorbrands.com/v2/px_fonts/tradesupply__textured)}</style>
+  </defs>
+</svg>
