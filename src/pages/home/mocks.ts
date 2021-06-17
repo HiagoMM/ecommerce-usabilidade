@@ -167,6 +167,108 @@ export const itens: Item[] = [
     supplier: "Hiper",
     img: "https://bompreco.vtexassets.com/arquivos/ids/156072-163-163?width=163&height=163&aspect=true",
   },
+  {
+    name: "Cerveja Puro Malte Heineken Lata 350ml",
+    price: "R$ 4.39",
+    category: "Bebidas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/170872-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Cerveja Pilsen Puro Malte Bohemia Lata 350ml",
+    price: "R$ 2,35",
+    category: "Bebidas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/155944-800-auto?width=800&height=auto&aspect=true",
+  },
+
+
+  {
+    name: "Bebida Láctea UHT Chocolate Toddynho Caixa 200ml",
+    price: "R$ 1,29",
+    category: "Bebidas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/155614-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Água Mineral Natural sem Gás Crystal Garrafa 500ml",
+    price: "R$ 0,98",
+    category: "Bebidas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/155428-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Refrigerante Original Coca-Cola Garrafa 250ml",
+    price: "R$ 1,99",
+    category: "Bebidas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/156388-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Leite UHT Integral Elegê Caixa 1l",
+    price: "R$ 3,69",
+    category: "Bebidas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/155735-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Amaciante Downy 1,5L – 3 Unidades",
+    price: "R$ 54,00",
+    category: "Limpeza",
+    supplier: "Extra",
+    img: "https://www.extra-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1263771081",
+  },
+  {
+    name: "Sabão Líquido Omo Perfeita 3L - 4 Unidades",
+    price: "R$ 118,16",
+    category: "Limpeza",
+    supplier: "Extra",
+    img: "https://www.extra-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=128746567",
+  },
+  {
+    name: "Caixa de Bombom Nestlé 251g com 15 Unidades",
+    price: "R$ 9,99",
+    category: "Guloseimas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/156610-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Caixa de Bombom Sortido Lacta Favoritos 250,6g",
+    price: "R$ 9,79",
+    category: "Guloseimas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/155577-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Biscoito Recheio Flocos  Pacote 130g",
+    price: "R$ 1,19",
+    category: "Guloseimas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/166121-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Biscoito Maria Tradicional Vitarella Pacote 400g",
+    price: "R$ 3,29",
+    category: "Guloseimas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/155553-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Wafer Recheio Chocolate Lacta Bis 126g",
+    price: "R$ 4,39",
+    category: "Guloseimas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/155715-800-auto?width=800&height=auto&aspect=true",
+  },
+  {
+    name: "Salgadinho Requeijão Elma Chips Cheetos Pacote 45g",
+    price: "R$ 2,59",
+    category: "Guloseimas",
+    supplier: "Hiper",
+    img: "https://bompreco.vtexassets.com/arquivos/ids/156226-800-auto?width=800&height=auto&aspect=true",
+  },
+
+  
 ];
 
 export const cards = [
