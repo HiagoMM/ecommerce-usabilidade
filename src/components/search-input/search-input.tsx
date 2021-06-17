@@ -8,6 +8,7 @@ import { ButtonBase, Popover } from "@material-ui/core";
 import { useState } from "react";
 import { itens } from "../../pages/home/mocks";
 import { Button } from "@material-ui/core";
+import ClearIcon from "@material-ui/icons/Clear";
 
 interface SearchInputProps extends InputBaseProps {
   onChangeSelected: (value: string) => void;
@@ -73,6 +74,14 @@ export default function SearchInput({
       </Popover>
       <Divider className="divider" orientation="vertical" />
       <InputBase className="input" placeholder="Pesquisar produto" {...rest} />
+      {rest.value && (
+        <IconButton
+          aria-label="search"
+          onClick={() => rest.onChange({ target: { value: "" } } as any)}
+        >
+          <ClearIcon />
+        </IconButton>
+      )}
       <IconButton type="submit" aria-label="search">
         <SearchIcon />
       </IconButton>

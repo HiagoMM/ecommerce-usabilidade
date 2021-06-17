@@ -14,8 +14,6 @@ const Banner: React.FC = () => {
       autoPlay
       showThumbs={false}
       showStatus={false}
-      showIndicators={false}
-      showArrows={false}
       emulateTouch
       infiniteLoop
     >

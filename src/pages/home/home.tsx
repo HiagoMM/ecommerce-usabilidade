@@ -67,6 +67,7 @@ const Home: React.FC = () => {
                 image={mer.img}
                 height="30rem"
                 cover
+                onClick={() => setSearch(mer.name)}
               ></CardImage>
             ))}
           />
@@ -80,7 +81,9 @@ const Home: React.FC = () => {
                 <CardImage key={index} image={item.img} height="10rem" />
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
-                <p className="supplier">Vendido por: <strong>{item.supplier}</strong></p>
+                <p className="supplier">
+                  Vendido por: <strong>{item.supplier}</strong>
+                </p>
                 <Button
                   startIcon={<ShoppingCartIcon />}
                   size="large"
@@ -103,7 +106,9 @@ const Home: React.FC = () => {
                 <CardImage key={index} image={item.img} height="10rem" />
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
-                <p className="supplier">Vendido por: <strong>{item.supplier}</strong></p>
+                <p className="supplier">
+                  Vendido por: <strong>{item.supplier}</strong>
+                </p>
                 <Button
                   startIcon={<ShoppingCartIcon />}
                   size="large"
@@ -125,7 +130,9 @@ const Home: React.FC = () => {
               <CardImage key={index} image={item.img} height="10rem" />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
-              <p className="supplier">Vendido por: <strong>{item.supplier}</strong></p>
+              <p className="supplier">
+                Vendido por: <strong>{item.supplier}</strong>
+              </p>
               <Button
                 startIcon={<ShoppingCartIcon />}
                 size="large"

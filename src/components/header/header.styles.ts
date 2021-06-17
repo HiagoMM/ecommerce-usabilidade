@@ -1,6 +1,11 @@
 import styled from "styled-components";
+import { Paper } from "@material-ui/core";
 
 export const Container = styled.div`
+  position: sticky;
+  z-index: 1000;
+  top: 0px;
+  background-color: #fbfbfb;
   border-bottom: 1pt solid #0002;
   display: flex;
   align-items: center;
@@ -46,9 +51,14 @@ export const Container = styled.div`
   }
 `;
 
-export const CategoriesContainer = styled.div`
+export const CategoriesContainer = styled(Paper)`
+  position: sticky;
+  z-index: 1000;
+  top: 90px;
+
+  background-color: #fbfbfb;
   height: 2.7rem;
-  margin: 0.7rem 4rem;
+  padding: 0.7rem 4rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
