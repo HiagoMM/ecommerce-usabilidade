@@ -9,6 +9,10 @@ import { categories, itens, mercados } from "./mocks";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useCart } from "../../components/cartContext/cart.context";
+
+const randomized1 = [...itens].sort(() => Math.random() - 0.5);
+const randomized2 = [...itens].sort(() => Math.random() - 0.5);
+
 const Home: React.FC = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState(null);
@@ -76,7 +80,7 @@ const Home: React.FC = () => {
             title="Ofertas especiais"
             subTitle="Ver todos"
             cols={6}
-            itens={itens.map((item, index) => (
+            itens={randomized1.map((item, index) => (
               <Coupon elevation={3} key={index}>
                 <CardImage key={index} image={item.img} height="10rem" />
                 <h3>{item.name}</h3>
@@ -101,7 +105,7 @@ const Home: React.FC = () => {
             title="Promoções Da Semana"
             subTitle="Ver todos"
             cols={6}
-            itens={itens.map((item, index) => (
+            itens={randomized2.map((item, index) => (
               <Coupon elevation={3} key={index}>
                 <CardImage key={index} image={item.img} height="10rem" />
                 <h3>{item.name}</h3>

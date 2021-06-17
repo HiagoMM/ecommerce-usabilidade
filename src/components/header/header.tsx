@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
             className="btn-margin cart-button"
             onClick={() => history.push("/cart")}
           >
-            <Badge badgeContent={getTotal} color="primary">
+            <Badge className="shop" badgeContent={getTotal} color="primary">
               <ShoppingCartIcon />
             </Badge>
             <p>

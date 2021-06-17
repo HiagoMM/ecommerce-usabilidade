@@ -48,6 +48,9 @@ export const Container = styled.div`
     span {
       font-weight: bold;
     }
+    .shop {
+      margin-right: 5px;
+    }
   }
 `;
 
