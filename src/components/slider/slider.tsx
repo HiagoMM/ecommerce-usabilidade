@@ -1,10 +1,10 @@
-import { Paper } from "@material-ui/core";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import IconButton from "@material-ui/core/IconButton";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import React, { useRef } from "react";
 import Swipe from "react-easy-swipe";
 import { Container } from "./slider.styles";
-
 interface SliderProps {
   cols: number;
   itens: any[];
@@ -45,12 +45,12 @@ export const Slider: React.FC<SliderProps> = ({
           <ArrowForwardIosIcon />
         </div>
         <div className="arrows">
-          <Paper className="arrow" onClick={handleBack}>
-            <ArrowBackIosIcon />
-          </Paper>
-          <Paper className="arrow" onClick={handleNext}>
-            <ArrowForwardIosIcon />
-          </Paper>
+          <IconButton className="arrow" onClick={handleBack}>
+            <ChevronLeftIcon />
+          </IconButton>
+          <IconButton className="arrow" onClick={handleNext}>
+            <ChevronRightIcon />
+          </IconButton>
         </div>
       </div>
       <div className="content-wrapper">
