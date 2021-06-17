@@ -57,6 +57,10 @@ export const Coupon = styled(Paper)`
     font-weight: bold;
     color: ${({ theme }) => theme.colors.primary};
   }
+  .supplier {
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
   .button {
     border-radius: 30px;
   }

@@ -23,6 +23,7 @@ const Cart: React.FC = () => {
   const { cartItens, setCartItens, getTotalPrice } = useCart();
   const [paymentMode, setPaymentMode] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [selectedValue, setSelectedValue] = React.useState('');
 
   const history = useHistory();
 
@@ -52,11 +53,31 @@ const Cart: React.FC = () => {
   const handleDecrement = (item) => {
     const index = cartItens.findIndex((cItem) => cItem.name === item.name);
     const itens = [...cartItens];
-    itens.splice(index, 1);
-    setCartItens(itens);
+    if (itens.filter((fItem) => fItem.name === item.name).length === 1) {
+      handleDelete(item);
+    } else {
+      itens.splice(index, 1);
+      setCartItens(itens);
+    }
   };
   const handleDelete = (item) => {
-    setCartItens(cartItens.filter((cItem) => cItem.name !== item.name));
+    Swal.fire({
+      title: 'Deseja excluir os itens do carrinho?',
+      showDenyButton: true,
+      showCancelButton: true,
+      showConfirmButton: false,
+      cancelButtonText: `Não`,
+      denyButtonText: `Excluir`,
+      customClass: {
+        cancelButton: 'order-1 right-gap',
+        denyButton: 'order-3',
+      }
+    }).then((result) => {
+      if (result.isDenied) {
+        Swal.fire('Itens excluídos!', '', 'success')
+          .then(() => { setCartItens(cartItens.filter((cItem) => cItem.name !== item.name)); })
+      }
+    })
   };
 
   const handleClick = () => {
@@ -73,9 +94,13 @@ const Cart: React.FC = () => {
     }
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
+  };
+
   return (
     <>
-      <Header onChangeSelected={() => {}} search={""} setSearch={() => {}} />
+      <Header onChangeSelected={() => { }} search={""} setSearch={() => { }} />
       <Container>
         {!paymentMode ? (
           <Paper className="left">
@@ -128,7 +153,11 @@ const Cart: React.FC = () => {
               {cards.map((card, index) => (
                 <div className="card-select" key={index}>
                   <div className="center">
-                    <Radio color="primary" />
+                    <Radio 
+                      checked={selectedValue === card.desc} 
+                      onChange={handleChange}
+                      value={card.desc} 
+                      color="primary" />
                   </div>
                   <img src={card.img} alt="" />
                   <h4>{card.desc}</h4>

@@ -80,6 +80,7 @@ const Home: React.FC = () => {
                 <CardImage key={index} image={item.img} height="10rem" />
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
+                <p className="supplier">Vendido por: <strong>{item.supplier}</strong></p>
                 <Button
                   startIcon={<ShoppingCartIcon />}
                   size="large"
@@ -102,12 +103,14 @@ const Home: React.FC = () => {
                 <CardImage key={index} image={item.img} height="10rem" />
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
+                <p className="supplier">Vendido por: <strong>{item.supplier}</strong></p>
                 <Button
                   startIcon={<ShoppingCartIcon />}
                   size="large"
                   color="primary"
                   variant="contained"
                   className="button"
+                  onClick={() => handleClick(item)}
                 >
                   Adicionar
                 </Button>
@@ -122,12 +125,14 @@ const Home: React.FC = () => {
               <CardImage key={index} image={item.img} height="10rem" />
               <h3>{item.name}</h3>
               <p>{item.price}</p>
+              <p className="supplier">Vendido por: <strong>{item.supplier}</strong></p>
               <Button
                 startIcon={<ShoppingCartIcon />}
                 size="large"
                 color="primary"
                 variant="contained"
                 className="button"
+                onClick={() => handleClick(item)}
               >
                 Adicionar
               </Button>

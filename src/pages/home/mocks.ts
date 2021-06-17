@@ -33,12 +33,15 @@ export const categories = [
 
 export const mercados = [
   {
+    name: "Extra",
     img: "https://www.querotelefonesac0800.com/wp-content/uploads/2020/08/telefone-extra-1.jpg",
   },
   {
+    name: "Hiper",
     img: "https://saoluisshopping.com/wp-content/uploads/2020/06/21C5CDB7-524E-4DEC-846C-BB9E6DA3BE03.jpeg",
   },
   {
+    name: "Mercantil Rodrigues",
     img: "http://www.mercantilrodrigues.com.br/sites/default/files/image-share.jpg",
   },
 ];
