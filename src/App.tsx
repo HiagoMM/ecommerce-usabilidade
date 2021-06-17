@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import SignInUp from "./pages/sign-in-up/sign-in-up";
 import { ThemeProvider as MatThemeProvider } from "@material-ui/core/styles";
 import { ThemeProvider } from "styled-components";
@@ -24,6 +29,7 @@ export default function App() {
               <Route path="/cart">
                 <Cart />
               </Route>
+              <Redirect from="/" to="/sign-in-up" />
             </Switch>
           </Router>
         </ThemeProvider>

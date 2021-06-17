@@ -16,9 +16,12 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import { parseNumber } from "../../utils/functions";
 import { ArrowBackIos } from "@material-ui/icons";
 import { cards } from "../home/mocks";
+import Swal from "sweetalert2";
+import { useHistory } from "react-router-dom";
 const Cart: React.FC = () => {
   const { cartItens, setCartItens, getTotalPrice } = useCart();
-  const [paymentMode, setPaymentMode] = useState(true);
+  const [paymentMode, setPaymentMode] = useState(false);
+  const history = useHistory();
   const realItens = useMemo(() => {
     const itens = [];
     cartItens.forEach((item) => {
@@ -44,6 +47,20 @@ const Cart: React.FC = () => {
   };
   const handleDelete = (item) => {
     setCartItens(cartItens.filter((cItem) => cItem.name !== item.name));
+  };
+
+  const handleClick = () => {
+    setPaymentMode(true);
+    if (paymentMode) {
+      Swal.fire(
+        "Compra efetuada com sucesso!!",
+        "Entrega prevista para o dia 19/06/2021",
+        "success"
+      ).then(() => {
+        setCartItens([]);
+        history.push("/home");
+      });
+    }
   };
 
   return (
@@ -128,7 +145,7 @@ const Cart: React.FC = () => {
             size="large"
             variant="contained"
             className="button"
-            onClick={() => setPaymentMode(true)}
+            onClick={() => handleClick()}
           >
             {paymentMode ? "Finalizar" : "Continuar"}
           </Button>

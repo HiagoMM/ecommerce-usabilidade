@@ -1,7 +1,10 @@
 import * as yup from "yup";
 
 export const RegisterValidation = yup.object({
-  email: yup.string().required("Campo obrigatório"),
+  email: yup
+    .string()
+    .email("Deve ser preenchido com um email")
+    .required("Campo obrigatório"),
   name: yup.string().required("Campo obrigatório"),
   surname: yup.string().required("Campo obrigatório"),
   birthDate: yup.string().required("Campo obrigatório"),
@@ -11,6 +14,9 @@ export const RegisterValidation = yup.object({
 });
 
 export const LoginValidation = yup.object({
-  email: yup.string().required("Campo obrigatório"),
+  email: yup
+    .string()
+    .email("Deve ser preenchido com um email")
+    .required("Campo obrigatório"),
   password: yup.string().required("Campo obrigatório"),
 });

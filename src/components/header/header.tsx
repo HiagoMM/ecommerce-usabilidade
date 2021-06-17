@@ -24,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const history = useHistory();
   const { getTotalPrice, getTotal } = useCart();
+  const name = localStorage.getItem("user");
 
   return (
     <>
@@ -41,14 +42,14 @@ const Header: React.FC<HeaderProps> = ({
         />
         <div className="support-number">
           <div className="center">
-            <Typography variant="h6">08000 40 8004</Typography>
-            <Typography>suporte</Typography>
+            <Typography variant="h6">0800 40 8004</Typography>
+            <Typography>SAC</Typography>
           </div>
         </div>
         <div className="icons">
           <ButtonBase className="btn-margin cart-button">
             <PersonIcon />
-            <p>Hiago</p>
+            <p>{name}</p>
           </ButtonBase>
           <ButtonBase
             className="btn-margin cart-button"
