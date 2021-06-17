@@ -1,24 +1,17 @@
-import {
-  Badge,
-  Button,
-  ButtonBase,
-  IconButton,
-  Typography,
-} from "@material-ui/core";
+import { Badge, Button, ButtonBase, Typography } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import CasinoIcon from "@material-ui/icons/Casino";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import PersonIcon from "@material-ui/icons/Person";
+import RefreshIcon from "@material-ui/icons/Refresh";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Logo from "../../assets/icon-logo.png";
+import { useCart } from "../cartContext/cart.context";
 import SearchInput from "../search-input/search-input";
 import { CategoriesContainer, Container } from "./header.styles";
-import CasinoIcon from "@material-ui/icons/Casino";
-import LocalOfferIcon from "@material-ui/icons/LocalOffer";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import RefreshIcon from "@material-ui/icons/Refresh";
-import { useCart } from "../cartContext/cart.context";
-import { useHistory } from "react-router-dom";
 interface HeaderProps {
   search: string;
   setSearch: (value: string) => void;
