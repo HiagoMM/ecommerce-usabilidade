@@ -18,7 +18,6 @@ export const Container = styled.div`
       display: grid;
       grid-template-columns: 1fr 1fr 9fr;
       margin: 10px 0px;
-      /* border: 1px solid black; */
       border-radius: 10px;
       .center {
         display: grid;
