@@ -8,10 +8,12 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { categories, itens, mercados } from "./mocks";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useCart } from "../../components/cartContext/cart.context";
 const Home: React.FC = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState(null);
   const [filteredItens, setFilteredItens] = useState([]);
+  const { setCartItens, cartItens } = useCart();
 
   useEffect(() => {
     setFilteredItens(
@@ -30,9 +32,8 @@ const Home: React.FC = () => {
   };
 
   const handleClick = (item) => {
-    const itens = JSON.parse(localStorage.getItem("itens") || "[]");
-    itens.push(item);
-    localStorage.setItem("itens", JSON.stringify(itens));
+    console.log(cartItens);
+    setCartItens([...cartItens, item]);
   };
 
   return (
@@ -96,24 +97,22 @@ const Home: React.FC = () => {
             title="Promoções Da Semana"
             subTitle="Ver todos"
             cols={6}
-            itens={itens
-              .sort(() => Math.random() - 0.5)
-              .map((item, index) => (
-                <Coupon elevation={3} key={index}>
-                  <CardImage key={index} image={item.img} height="10rem" />
-                  <h3>{item.name}</h3>
-                  <p>{item.price}</p>
-                  <Button
-                    startIcon={<ShoppingCartIcon />}
-                    size="large"
-                    color="primary"
-                    variant="contained"
-                    className="button"
-                  >
-                    Adicionar
-                  </Button>
-                </Coupon>
-              ))}
+            itens={itens.map((item, index) => (
+              <Coupon elevation={3} key={index}>
+                <CardImage key={index} image={item.img} height="10rem" />
+                <h3>{item.name}</h3>
+                <p>{item.price}</p>
+                <Button
+                  startIcon={<ShoppingCartIcon />}
+                  size="large"
+                  color="primary"
+                  variant="contained"
+                  className="button"
+                >
+                  Adicionar
+                </Button>
+              </Coupon>
+            ))}
           />
         </>
       ) : (

@@ -13,12 +13,15 @@ interface SearchInputProps extends InputBaseProps {
   onChangeSelected: (value: string) => void;
 }
 
-export default function SearchInput(props: SearchInputProps) {
+export default function SearchInput({
+  onChangeSelected,
+  ...rest
+}: SearchInputProps) {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [selected, setSelected] = useState(null);
 
   const handleSelect = (cat) => {
-    props.onChangeSelected(cat);
+    onChangeSelected(cat);
     setSelected(cat);
 
     setAnchorEl(null);
@@ -69,7 +72,7 @@ export default function SearchInput(props: SearchInputProps) {
         </Categorias>
       </Popover>
       <Divider className="divider" orientation="vertical" />
-      <InputBase className="input" placeholder="Pesquisar produto" {...props} />
+      <InputBase className="input" placeholder="Pesquisar produto" {...rest} />
       <IconButton type="submit" aria-label="search">
         <SearchIcon />
       </IconButton>

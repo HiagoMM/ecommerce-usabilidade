@@ -15,7 +15,7 @@ export const Container = styled.div`
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.54);
     p {
-      margin-left: 10px;
+      margin: 0 10px;
     }
   }
   .btn-margin {

@@ -42,115 +42,124 @@ export const mercados = [
     img: "http://www.mercantilrodrigues.com.br/sites/default/files/image-share.jpg",
   },
 ];
-export const itens = [
+
+export interface Item {
+  name: string;
+  price: string;
+  category: string;
+  supplier: string;
+  img: string;
+}
+
+export const itens: Item[] = [
   {
     name: "Cebola 1 Unidade Aprox. 150g",
-    price: "R$ 1,00",
+    price: "R$ 1.00",
     category: "Verdura",
     supplier: "Extra",
     img: "https://bompreco.vtexassets.com/arquivos/ids/168106-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Tomate Salada 1 Unidade Aprox. 250g",
-    price: "R$ 0,50",
+    price: "R$ 0.50",
     category: "Verdura",
     supplier: "Hiper",
     img: "https://bompreco.vtexassets.com/arquivos/ids/161653-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Flocão Novomilho pacote 500g",
-    price: "R$ 1,50",
+    price: "R$ 1.50",
     category: "Comida",
     supplier: "Hiper",
     img: "https://bompreco.vtexassets.com/arquivos/ids/162732-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Abacate 1 Unidade Aprox. 150g",
-    price: "R$ 0,25",
+    price: "R$ 0.25",
     category: "Fruta",
     supplier: "Rede Compras",
     img: "https://bompreco.vtexassets.com/arquivos/ids/161571-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Peito de Frango Congelado",
-    price: "R$ 15,00",
+    price: "R$ 1.00",
     category: "Carnes",
     supplier: "Extra",
     img: "https://bompreco.vtexassets.com/arquivos/ids/161666-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Salsicha 1 Unidade Aprox. 150g",
-    price: "R$ 5,00",
+    price: "R$ 5.00",
     category: "Carnes",
     supplier: "Maxxi",
     img: "https://bompreco.vtexassets.com/arquivos/ids/156116-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Detergente ypê 250ml",
-    price: "R$ 2,00",
+    price: "R$ 2.00",
     category: "Limpeza",
     supplier: "Carrefour",
     img: "https://bompreco.vtexassets.com/arquivos/ids/157729-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Vanish 10x Multipower",
-    price: "R$ 5,00",
+    price: "R$ 5.00",
     category: "Limpeza",
     supplier: "Extra",
     img: "https://bompreco.vtexassets.com/arquivos/ids/156072-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Cebola 1 Unidade Aprox. 150g",
-    price: "R$ 1,06",
+    price: "R$ 1.06",
     category: "Verdura",
     supplier: "Carrefour",
     img: "https://bompreco.vtexassets.com/arquivos/ids/168106-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Tomate Salada 1 Unidade Aprox. 250g",
-    price: "R$ 0,48",
+    price: "R$ 0.48",
     category: "Verdura",
     supplier: "Hiper",
     img: "https://bompreco.vtexassets.com/arquivos/ids/161653-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Flocão Novomilho pacote 500g",
-    price: "R$ 1,48",
+    price: "R$ 1.48",
     category: "Comida",
     supplier: "Carrefour",
     img: "https://bompreco.vtexassets.com/arquivos/ids/162732-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Abacate 1 Unidade Aprox. 150g",
-    price: "R$ 0,25",
+    price: "R$ 0.25",
     category: "Fruta",
     supplier: "Maxxi",
     img: "https://bompreco.vtexassets.com/arquivos/ids/161571-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Peito de Frango Congelado",
-    price: "R$ 15,00",
+    price: "R$ 10.00",
     category: "Carnes",
     supplier: "Rede Compras",
     img: "https://bompreco.vtexassets.com/arquivos/ids/161666-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Salsicha 1 Unidade Aprox. 150g",
-    price: "R$ 5,00",
+    price: "R$ 5.00",
     category: "Carnes",
     supplier: "Rede Compras",
     img: "https://bompreco.vtexassets.com/arquivos/ids/156116-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Detergente ypê 250ml",
-    price: "R$ 2,00",
+    price: "R$ 2.00",
     category: "Limpeza",
     supplier: "Extra",
     img: "https://bompreco.vtexassets.com/arquivos/ids/157729-163-163?width=163&height=163&aspect=true",
   },
   {
     name: "Vanish 10x Multipower",
-    price: "R$ 5,00",
+    price: "R$ 5.00",
     category: "Limpeza",
     supplier: "Hiper",
     img: "https://bompreco.vtexassets.com/arquivos/ids/156072-163-163?width=163&height=163&aspect=true",

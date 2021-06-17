@@ -1,4 +1,10 @@
-import { Button, ButtonBase, IconButton, Typography } from "@material-ui/core";
+import {
+  Badge,
+  Button,
+  ButtonBase,
+  IconButton,
+  Typography,
+} from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PersonIcon from "@material-ui/icons/Person";
@@ -11,6 +17,8 @@ import CasinoIcon from "@material-ui/icons/Casino";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RefreshIcon from "@material-ui/icons/Refresh";
+import { useCart } from "../cartContext/cart.context";
+import { useHistory } from "react-router-dom";
 interface HeaderProps {
   search: string;
   setSearch: (value: string) => void;
@@ -21,6 +29,9 @@ const Header: React.FC<HeaderProps> = ({
   setSearch,
   onChangeSelected,
 }) => {
+  const history = useHistory();
+  const { getTotalPrice, getTotal } = useCart();
+
   return (
     <>
       <Container>
@@ -37,17 +48,20 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
         <div className="icons">
-          <IconButton className="btn-margin">
-            <PersonIcon />
-          </IconButton>
-          <IconButton className="btn-margin">
-            <FavoriteBorderIcon />
-          </IconButton>
           <ButtonBase className="btn-margin cart-button">
-            <ShoppingCartIcon />
+            <PersonIcon />
+            <p>Hiago</p>
+          </ButtonBase>
+          <ButtonBase
+            className="btn-margin cart-button"
+            onClick={() => history.push("/carrinho")}
+          >
+            <Badge badgeContent={getTotal} color="primary">
+              <ShoppingCartIcon />
+            </Badge>
             <p>
               Carrinho
-              <br /> <span>R$ 3123</span>
+              <br /> <span>R$ {getTotalPrice}</span>
             </p>
           </ButtonBase>
         </div>
