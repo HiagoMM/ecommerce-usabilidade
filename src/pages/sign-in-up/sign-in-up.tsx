@@ -41,7 +41,7 @@ export default function SignInUp() {
 
       <StyledSection isRegister={isRegister}>
         <Formik
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => handleLogin(values)}
           initialValues={REGISTER_INITIAL_VALUES}
           validationSchema={RegisterValidation}
         >

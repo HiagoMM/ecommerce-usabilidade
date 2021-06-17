@@ -8,7 +8,12 @@ export const Container = styled.div`
   .left {
     padding: 1rem;
     width: 75%;
-
+    .center-loading {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+    }
     .card-select {
       display: grid;
       grid-template-columns: 1fr 1fr 9fr;

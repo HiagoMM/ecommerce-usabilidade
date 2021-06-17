@@ -5,12 +5,13 @@ import { Container } from "./cart.styles";
 import {
   Button,
   ButtonGroup,
+  CircularProgress,
   IconButton,
   Paper,
   Radio,
 } from "@material-ui/core";
 import { useCart } from "../../components/cartContext/cart.context";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Divider from "@material-ui/core/Divider";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { parseNumber } from "../../utils/functions";
@@ -21,7 +22,16 @@ import { useHistory } from "react-router-dom";
 const Cart: React.FC = () => {
   const { cartItens, setCartItens, getTotalPrice } = useCart();
   const [paymentMode, setPaymentMode] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const history = useHistory();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   const realItens = useMemo(() => {
     const itens = [];
     cartItens.forEach((item) => {
@@ -66,38 +76,45 @@ const Cart: React.FC = () => {
   return (
     <>
       <Header onChangeSelected={() => {}} search={""} setSearch={() => {}} />
-
       <Container>
         {!paymentMode ? (
           <Paper className="left">
-            <div className="item title">
-              <p></p>
-              <p>Descrição</p>
-              <p>Valor</p>
-              <p>Quantidade</p>
-              <p>Total</p>
-              <p></p>
-              <Divider className="divider" />
-            </div>
-            {realItens.map((item, index) => (
-              <div className="item" key={index}>
-                <img src={item.img} alt="img" />
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-                <ButtonGroup variant="contained" color="primary">
-                  <Button onClick={() => handleDecrement(item)}>-</Button>
-                  <Button>{item.qtd}</Button>
-                  <Button onClick={() => handleIncrement(item)}>+</Button>
-                </ButtonGroup>
-                <p>R$ {(parseNumber(item.price) * item.qtd).toFixed(2)}</p>
-                <IconButton onClick={() => handleDelete(item)}>
-                  <CancelIcon className="cancel" />
-                </IconButton>
-                {index !== realItens.length - 1 && (
-                  <Divider className="divider" />
-                )}
+            {loading ? (
+              <div className="center-loading">
+                <CircularProgress />
               </div>
-            ))}
+            ) : (
+              <>
+                <div className="item title">
+                  <p></p>
+                  <p>Descrição</p>
+                  <p>Valor</p>
+                  <p>Quantidade</p>
+                  <p>Total</p>
+                  <p></p>
+                  <Divider className="divider" />
+                </div>
+                {realItens.map((item, index) => (
+                  <div className="item" key={index}>
+                    <img src={item.img} alt="img" />
+                    <p>{item.name}</p>
+                    <p>{item.price}</p>
+                    <ButtonGroup variant="contained" color="primary">
+                      <Button onClick={() => handleDecrement(item)}>-</Button>
+                      <Button>{item.qtd}</Button>
+                      <Button onClick={() => handleIncrement(item)}>+</Button>
+                    </ButtonGroup>
+                    <p>R$ {(parseNumber(item.price) * item.qtd).toFixed(2)}</p>
+                    <IconButton onClick={() => handleDelete(item)}>
+                      <CancelIcon className="cancel" />
+                    </IconButton>
+                    {index !== realItens.length - 1 && (
+                      <Divider className="divider" />
+                    )}
+                  </div>
+                ))}
+              </>
+            )}
           </Paper>
         ) : (
           <>

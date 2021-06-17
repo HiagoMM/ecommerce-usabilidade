@@ -12,6 +12,7 @@ import Logo from "../../assets/icon-logo.png";
 import { useCart } from "../cartContext/cart.context";
 import SearchInput from "../search-input/search-input";
 import { CategoriesContainer, Container } from "./header.styles";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 interface HeaderProps {
   search: string;
   setSearch: (value: string) => void;
@@ -62,6 +63,13 @@ const Header: React.FC<HeaderProps> = ({
               Carrinho
               <br /> <span>R$ {getTotalPrice}</span>
             </p>
+          </ButtonBase>
+          <ButtonBase
+            className="btn-margin cart-button"
+            onClick={() => history.push("/sign-in-up")}
+          >
+            <ExitToAppIcon />
+            <p>Sair</p>
           </ButtonBase>
         </div>
       </Container>
