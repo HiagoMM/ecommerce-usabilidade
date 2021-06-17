@@ -202,8 +202,8 @@ const Cart: React.FC = () => {
             <h3 className="red">Desconto</h3>
             <h4 className="red">R$ -5.00</h4>
             <Divider className="divider" />
-            <h3>Total</h3>
-            <h4>R$ {(Number(getTotalPrice) + 5).toFixed(2)}</h4>
+            <h3><strong>Total</strong></h3>
+            <h4><strong>R$ {(Number(getTotalPrice) + 5).toFixed(2)}</strong></h4>
           </div>
           <h1>Entrega</h1>
           <h4>Rua Radialista Geraldo Rodrigues,100 - Jardim Continental </h4>
