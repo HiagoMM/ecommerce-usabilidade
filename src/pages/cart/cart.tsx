@@ -14,6 +14,7 @@ import { useCart } from "../../components/cartContext/cart.context";
 import { useMemo, useState, useEffect } from "react";
 import Divider from "@material-ui/core/Divider";
 import CancelIcon from "@material-ui/icons/Cancel";
+import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import { parseNumber } from "../../utils/functions";
 import { ArrowBackIos } from "@material-ui/icons";
 import { cards } from "../home/mocks";
@@ -23,6 +24,7 @@ const Cart: React.FC = () => {
   const { cartItens, setCartItens, getTotalPrice } = useCart();
   const [paymentMode, setPaymentMode] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [selectedValue, setSelectedValue] = React.useState('');
 
   const history = useHistory();
 
@@ -52,19 +54,59 @@ const Cart: React.FC = () => {
   const handleDecrement = (item) => {
     const index = cartItens.findIndex((cItem) => cItem.name === item.name);
     const itens = [...cartItens];
-    itens.splice(index, 1);
-    setCartItens(itens);
+    if (itens.filter((fItem) => fItem.name === item.name).length === 1) {
+      handleDelete(item);
+    } else {
+      itens.splice(index, 1);
+      setCartItens(itens);
+    }
   };
   const handleDelete = (item) => {
-    setCartItens(cartItens.filter((cItem) => cItem.name !== item.name));
+    Swal.fire({
+      title: 'Deseja excluir os itens do carrinho?',
+      showDenyButton: true,
+      showCancelButton: true,
+      showConfirmButton: false,
+      cancelButtonText: `Não`,
+      denyButtonText: `Excluir`,
+      customClass: {
+        cancelButton: 'order-1 right-gap',
+        denyButton: 'order-3',
+      }
+    }).then((result) => {
+      if (result.isDenied) {
+        Swal.fire('Itens excluídos!', '', 'success')
+          .then(() => { setCartItens(cartItens.filter((cItem) => cItem.name !== item.name)); })
+      }
+    })
+  };
+
+  const handleClearCart = () => {
+    Swal.fire({
+      title: 'Deseja limpar o carrinho?',
+      showDenyButton: true,
+      showCancelButton: true,
+      showConfirmButton: false,
+      cancelButtonText: `Não`,
+      denyButtonText: `Limpar`,
+      customClass: {
+        cancelButton: 'order-1 right-gap',
+        denyButton: 'order-3',
+      }
+    }).then((result) => {
+      if (result.isDenied) {
+        Swal.fire('Seu carrinho está vazio!', '', 'success')
+          .then(() => { setCartItens([]); })
+      }
+    })
   };
 
   const handleClick = () => {
     setPaymentMode(true);
     if (paymentMode) {
       Swal.fire(
-        "Compra efetuada com sucesso!!",
-        "Entrega prevista para o dia 19/06/2021",
+        "Compra efetuada com sucesso!",
+        `Entrega prevista para o dia ${new Date().getDate()+2}/${new Date().getMonth()+1}/${new Date().getFullYear()}`,
         "success"
       ).then(() => {
         setCartItens([]);
@@ -73,9 +115,13 @@ const Cart: React.FC = () => {
     }
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
+  };
+
   return (
     <>
-      <Header onChangeSelected={() => {}} search={""} setSearch={() => {}} />
+      <Header onChangeSelected={() => { }} search={""} setSearch={() => { }} />
       <Container>
         {!paymentMode ? (
           <Paper className="left">
@@ -91,7 +137,9 @@ const Cart: React.FC = () => {
                   <p>Valor</p>
                   <p>Quantidade</p>
                   <p>Total</p>
-                  <p></p>
+                  <Button size="small" aria-label="Limpar carrinho" onClick={() => handleClearCart()}>
+                    <RemoveShoppingCartIcon />
+                  </Button>
                   <Divider className="divider" />
                 </div>
                 {realItens.map((item, index) => (
@@ -128,7 +176,11 @@ const Cart: React.FC = () => {
               {cards.map((card, index) => (
                 <div className="card-select" key={index}>
                   <div className="center">
-                    <Radio color="primary" />
+                    <Radio
+                      checked={selectedValue === card.desc}
+                      onChange={handleChange}
+                      value={card.desc}
+                      color="primary" />
                   </div>
                   <img src={card.img} alt="" />
                   <h4>{card.desc}</h4>
@@ -150,18 +202,19 @@ const Cart: React.FC = () => {
             <h3 className="red">Desconto</h3>
             <h4 className="red">R$ -5.00</h4>
             <Divider className="divider" />
-            <h3>Total</h3>
-            <h4>R$ {(Number(getTotalPrice) + 5).toFixed(2)}</h4>
+            <h3><strong>Total</strong></h3>
+            <h4><strong>R$ {(Number(getTotalPrice) + 5).toFixed(2)}</strong></h4>
           </div>
           <h1>Entrega</h1>
           <h4>Rua Radialista Geraldo Rodrigues,100 - Jardim Continental </h4>
-          <h3 className="red">Previsto para - 19/06/2021</h3>
+          <h3 className="red">Previsto para {`${new Date().getDate()+2}/${new Date().getMonth()+1}/${new Date().getFullYear()}`}</h3>
 
           <Button
             color="primary"
             size="large"
             variant="contained"
             className="button"
+            disabled={cartItens.length === 0}
             onClick={() => handleClick()}
           >
             {paymentMode ? "Finalizar" : "Continuar"}

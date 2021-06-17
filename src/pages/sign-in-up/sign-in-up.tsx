@@ -52,7 +52,7 @@ export default function SignInUp() {
                 <Input name="email" className="full" label="Email" />
                 <Input name="name" label="Nome" />
                 <Input name="surname" label="Sobrenome" />
-                <Input name="birthDate" label="Data de Nascimento" />
+                <Input name="birthDate" label="Data de Nascimento" placeholder="dd/mm/aaaa"/>
                 <Input name="gender" label="Sexo" select>
                   <option value={1}>Masculino</option>
                   <option value={2}>Feminino</option>

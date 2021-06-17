@@ -75,6 +75,9 @@ export const Container = styled.div`
       margin: 0.5rem 0rem;
       font-weight: normal;
       color: #3e3e3e;
+      strong {
+        font-size: 1.4rem;
+      }
     }
     .red {
       color: #9e1717;
