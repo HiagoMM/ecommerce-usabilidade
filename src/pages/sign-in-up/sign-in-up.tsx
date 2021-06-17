@@ -45,40 +45,47 @@ export default function SignInUp() {
           initialValues={REGISTER_INITIAL_VALUES}
           validationSchema={RegisterValidation}
         >
-          <Form>
-            <h1>Cadastro</h1>
-            <RegisterLayout>
-              <Input name="email" className="full" label="Email" />
-              <Input name="name" label="Nome" />
-              <Input name="surname" label="Sobrenome" />
-              <Input name="birthDate" label="Data de Nascimento" />
-              <Input name="gender" label="Sexo" select>
-                <option value={1}>Masculino</option>
-                <option value={2}>Feminino</option>
-                <option value={3}>Outros</option>
-              </Input>
-              <Input
-                name="password"
-                className="full"
-                label="Senha"
-                type="password"
-              />
-              <Input
-                name="passwordConfirm"
-                className="full"
-                label="Confirmar Senha"
-                type="password"
-              />
-            </RegisterLayout>
-            <div className="buttons-container">
-              <Button color="primary" onClick={() => setIsRegister(false)}>
-                Voltar
-              </Button>
-              <Button type="submit" color="primary" variant="contained">
-                Cadastrar
-              </Button>
-            </div>
-          </Form>
+          {({ isValid, touched }) => (
+            <Form>
+              <h1>Cadastro</h1>
+              <RegisterLayout>
+                <Input name="email" className="full" label="Email" />
+                <Input name="name" label="Nome" />
+                <Input name="surname" label="Sobrenome" />
+                <Input name="birthDate" label="Data de Nascimento" />
+                <Input name="gender" label="Sexo" select>
+                  <option value={1}>Masculino</option>
+                  <option value={2}>Feminino</option>
+                  <option value={3}>Outros</option>
+                </Input>
+                <Input
+                  name="password"
+                  className="full"
+                  label="Senha"
+                  type="password"
+                />
+                <Input
+                  name="passwordConfirm"
+                  className="full"
+                  label="Confirmar Senha"
+                  type="password"
+                />
+              </RegisterLayout>
+              <div className="buttons-container">
+                <Button color="primary" onClick={() => setIsRegister(false)}>
+                  Voltar
+                </Button>
+                <Button
+                  disabled={!isValid || !Object.keys(touched).length}
+                  type="submit"
+                  color="primary"
+                  variant="contained"
+                >
+                  Cadastrar
+                </Button>
+              </div>
+            </Form>
+          )}
         </Formik>
       </StyledSection>
 
@@ -88,21 +95,28 @@ export default function SignInUp() {
           initialValues={LOGIN_INITIAL_VALUES}
           validationSchema={LoginValidation}
         >
-          <Form>
-            <h1>Login</h1>
-            <div className="inputs-size">
-              <Input name="email" label="Email" />
-              <Input name="password" label="Senha" type="password" />
-            </div>
-            <div className="buttons-container">
-              <Button color="primary" onClick={() => setIsRegister(true)}>
-                Criar conta
-              </Button>
-              <Button type="submit" color="primary" variant="contained">
-                Login
-              </Button>
-            </div>
-          </Form>
+          {({ isValid, touched }) => (
+            <Form>
+              <h1>Login</h1>
+              <div className="inputs-size">
+                <Input name="email" label="Email" />
+                <Input name="password" label="Senha" type="password" />
+              </div>
+              <div className="buttons-container">
+                <Button color="primary" onClick={() => setIsRegister(true)}>
+                  Criar conta
+                </Button>
+                <Button
+                  disabled={!isValid || !Object.keys(touched).length}
+                  type="submit"
+                  color="primary"
+                  variant="contained"
+                >
+                  Login
+                </Button>
+              </div>
+            </Form>
+          )}
         </Formik>
       </StyledSection>
     </StyledContainer>
