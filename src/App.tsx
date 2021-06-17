@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { matTheme, theme, GlobalStyle } from "./configs/themeConfig";
 import Home from "./pages/home/home";
 import ItensContextProvider from "./components/cartContext/cart.context";
+import Cart from "./pages/cart/cart";
 
 export default function App() {
   return (
@@ -19,6 +20,9 @@ export default function App() {
               </Route>
               <Route path="/home">
                 <Home />
+              </Route>
+              <Route path="/cart">
+                <Cart />
               </Route>
             </Switch>
           </Router>

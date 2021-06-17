@@ -28,7 +28,12 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <Container>
-        <img src={Logo} alt="logo" id="logo" />
+        <img
+          src={Logo}
+          alt="logo"
+          id="logo"
+          onClick={() => history.push("/home")}
+        />
         <SearchInput
           onChangeSelected={onChangeSelected}
           onChange={(event) => setSearch(event.target.value)}
@@ -47,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({
           </ButtonBase>
           <ButtonBase
             className="btn-margin cart-button"
-            onClick={() => history.push("/carrinho")}
+            onClick={() => history.push("/cart")}
           >
             <Badge badgeContent={getTotal} color="primary">
               <ShoppingCartIcon />

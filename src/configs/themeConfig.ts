@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
+    background-color: #fbfbfb;
   }
 
 `;

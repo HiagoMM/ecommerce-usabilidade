@@ -9,6 +9,7 @@ export const Container = styled.div`
     padding-right: 4rem;
     width: 1rem;
     flex: 0.4;
+    cursor: pointer;
   }
   .cart-button {
     padding: 12px;

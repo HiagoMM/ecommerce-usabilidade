@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useMemo } from "react";
 import { createContext, useState } from "react";
 import { Item } from "../../pages/home/mocks";
+import { parseNumber } from "../../utils/functions";
 
 interface CartContext {
   cartItens: Item[];
@@ -23,7 +24,7 @@ const ItensContextProvider: React.FC = ({ children }) => {
     () =>
       cartItens.length
         ? cartItens
-            .map((item) => Number(item.price.split("R$")[1].trim()))
+            .map((item) => parseNumber(item.price))
             .reduce((prev, atual) => prev + atual)
             .toFixed(2)
         : "0.00",

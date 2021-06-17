@@ -165,3 +165,22 @@ export const itens: Item[] = [
     img: "https://bompreco.vtexassets.com/arquivos/ids/156072-163-163?width=163&height=163&aspect=true",
   },
 ];
+
+export const cards = [
+  {
+    desc: "MasterCard Final: 3131",
+    img: "https://www.clubeextra.com.br/checkout/icons/mastercard-icon.svg",
+  },
+  {
+    desc: "MasterCard Final: 2223",
+    img: "https://www.clubeextra.com.br/checkout/icons/mastercard-icon.svg",
+  },
+  {
+    desc: "Novo Cartão de Crédito",
+    img: "https://www.clubeextra.com.br/checkout/icons/credit-card-icon.svg",
+  },
+  {
+    desc: "Novo Cartão de Débito",
+    img: "https://www.clubeextra.com.br/checkout/icons/credit-card-icon.svg",
+  },
+];
