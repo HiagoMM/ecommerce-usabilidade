@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Item = styled.div<{ link: string }>`
   background-image: url(${({ link }) => link});
-  height: 30rem;
+  height: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,7 +13,7 @@ export const Item = styled.div<{ link: string }>`
   .offer {
     background-color: ${({ theme }) => theme.colors.primary}d9;
     height: 60%;
-    width: 20%;
+    width: 25%;
     color: white;
     padding: 1rem;
     display: flex;

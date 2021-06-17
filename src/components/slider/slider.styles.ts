@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-export const Container = styled.div`
+import Color from "color";
+export const Container = styled.div<{ cols: number }>`
   padding: 1rem 4rem;
   .title-container {
     display: flex;
@@ -34,11 +34,32 @@ export const Container = styled.div`
         border-radius: 8px;
         padding: 0.3em;
         margin: 0 0.4rem;
-
+        transition: 0.3s;
         &:hover {
-          color: ${({ theme }) => theme.colors.primary};
+          background: ${({ theme }) => theme.colors.primary};
+          color: ${({ theme }) =>
+            Color(theme.colors.primary).darken(0.5).string()};
+          cursor: pointer;
         }
       }
     }
+  }
+  .content-wrapper {
+    width: 100%;
+  }
+  .content {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    --webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: calc(10% / ${(props) => props.cols});
+  }
+  .item {
+    flex: none;
+    width: calc(90% / ${(props) => props.cols});
+
+    scroll-snap-align: start;
+    user-select: none;
   }
 `;

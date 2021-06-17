@@ -7,11 +7,9 @@ import { Item } from "./banner.styles";
 
 const Banner: React.FC = () => {
   const items = [
-    "https://lorempixel.com/1920/800/cats/1",
-    "https://lorempixel.com/1920/800/cats/2",
-    "https://lorempixel.com/1920/800/cats/3",
-    "https://lorempixel.com/1920/800/cats/4",
-    "https://lorempixel.com/1920/800/cats/5",
+    "https://s3.amazonaws.com/redecomprasdelivery.com.br/files/banner_imagens/BET-BANNER-SAO-JOAO-PRODUTOS-1200x400px-9447.jpg",
+    "https://s3.amazonaws.com/redecomprasdelivery.com.br/files/banner_imagens/Bom-todo.jpg",
+    "https://s3.amazonaws.com/redecomprasdelivery.com.br/files/banner_imagens/maggi-1200.jpg",
   ];
   return (
     <Carousel
@@ -21,10 +19,11 @@ const Banner: React.FC = () => {
       showIndicators={false}
       showArrows={false}
       emulateTouch
+      infiniteLoop
     >
       {items.map((link, index) => (
         <Item key={index} link={link}>
-          <Paper className="offer">
+          {/* <Paper className="offer">
             <div className="title-text">
               <h1>20% OFF</h1>
               <p>Na compra de qualquer gato</p>
@@ -32,7 +31,7 @@ const Banner: React.FC = () => {
             <Button color="inherit" size="large" variant="outlined">
               Comprar
             </Button>
-          </Paper>
+          </Paper> */}
         </Item>
       ))}
     </Carousel>
