@@ -3,7 +3,11 @@ import Color from "color";
 import { Paper } from "@material-ui/core";
 export const Container = styled.div`
   width: 100%;
-
+  .coupon-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0rem 4rem;
+  }
   .card-1 {
     margin: 3rem 0rem;
     width: 100%;
@@ -36,10 +40,14 @@ export const CardImage = styled.div<{
 
 export const Coupon = styled(Paper)`
   padding: 1rem;
-  margin: 3rem 0.5rem;
+  margin: 2rem 0.5rem;
   display: flex;
   flex-direction: column;
   height: 17rem;
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: ${() => Color("#f3f3f3").lighten(0.3).string()};
+  }
   h3 {
     margin: 0px;
     font-weight: normal;

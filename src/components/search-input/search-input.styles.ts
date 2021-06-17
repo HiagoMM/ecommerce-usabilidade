@@ -26,3 +26,11 @@ export const Container = styled.div`
     color: rgba(0, 0, 0, 0.54);
   }
 `;
+export const Categorias = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  button {
+    text-transform: capitalize !important;
+  }
+`;

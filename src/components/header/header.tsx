@@ -11,13 +11,25 @@ import CasinoIcon from "@material-ui/icons/Casino";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RefreshIcon from "@material-ui/icons/Refresh";
-
-const Header: React.FC = () => {
+interface HeaderProps {
+  search: string;
+  setSearch: (value: string) => void;
+  onChangeSelected: (value: string) => void;
+}
+const Header: React.FC<HeaderProps> = ({
+  search,
+  setSearch,
+  onChangeSelected,
+}) => {
   return (
     <>
       <Container>
         <img src={Logo} alt="logo" id="logo" />
-        <SearchInput />
+        <SearchInput
+          onChangeSelected={onChangeSelected}
+          onChange={(event) => setSearch(event.target.value)}
+          value={search}
+        />
         <div className="support-number">
           <div className="center">
             <Typography variant="h6">08000 40 8004</Typography>
